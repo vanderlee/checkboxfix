@@ -12,9 +12,14 @@
 		<script>
 
 			$( function() {
-				$('.fixed').checkboxfix();
+				$('.fixed')
+				.checkboxfix()
+				.change(function() {
+					console.log('Change');
+				});
 
-				$('.value').checkboxfix('Off');
+				$('.value')
+				.checkboxfix('Off');
 			});
 		</script>
 
@@ -73,13 +78,6 @@
 						<td><?php echoif($_REQUEST['value']); ?></td>
 					</tr>
 					<tr>
-						<td>Type</td>
-						<td><input type="checkboxfix" name="type" value="On"/></td>
-						<td>Uses "checkboxfix" type, eliminates need to call checkboxfix()</td>
-						<td><i>empty string</i></td>
-						<td><?php echoif($_REQUEST['type']); ?></td>
-					</tr>
-					<tr>
 						<td>off expando empty</td>
 						<td><input type="checkbox" name="off-empty" value="On" off=""/></td>
 						<td>Has the offernative value specified in off attribute.</td>
@@ -95,20 +93,21 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="Submit">Submit</button>
+			<button type="submit">Submit</button>
+			<button type="reset">Reset</button>
 		</form>
 
 		<h2>Attribute copying</h2>
-		<input type="checkboxfix" name="name"/>name<br/>
-		<input type="checkboxfix" class="classy"/>class (red outline)<br/>
-		<input type="checkboxfix" id="identity"/>id (green outline)<br/>
-		<input type="checkboxfix" disabled="disabled"/>disabled<br/>
-		<input type="checkboxfix" required="required"/>required<br/>
-		<input type="checkboxfix" accesskey="c"/>accesskey (off+c)<br/>
-		<input type="checkboxfix" title="Title here!"/>title (hover)<br/>
-		<input type="checkboxfix" style="outline: solid 1px blue;"/>style (blue outline)<br/>
-		<input type="checkboxfix" hidden="hidden"/>hidden (not visible)<br/>
-		<input type="checkboxfix" contenteditable="false"/>contenteditable (not editable)<br/>
+		<input type="checkbox" off="" name="name"/>name<br/>
+		<input type="checkbox" off="" class="classy"/>class (red outline)<br/>
+		<input type="checkbox" off="" id="identity"/>id (green outline)<br/>
+		<input type="checkbox" off="" disabled="disabled"/>disabled<br/>
+		<input type="checkbox" off="" required="required"/>required<br/>
+		<input type="checkbox" off="" accesskey="c"/>accesskey (off+c)<br/>
+		<input type="checkbox" off="" title="Title here!"/>title (hover)<br/>
+		<input type="checkbox" off="" style="outline: solid 1px blue;"/>style (blue outline)<br/>
+		<input type="checkbox" off="" hidden="hidden"/>hidden (not visible)<br/>
+		<input type="checkbox" off="" contenteditable="false"/>contenteditable (not editable)<br/>
 
 		<?php
 			function echoif(&$value) {
