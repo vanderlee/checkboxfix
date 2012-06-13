@@ -14,7 +14,7 @@ Explicit, submit specified string when unchecked
 0.	Create a normal checkbox.
 0.	Call $(<selector>).checkboxfix('string') on the checkbox.
 
-Implicit, by "off" attribute, returning empty string when unchecked.
+Implicit, by "type" attribute, returning empty string when unchecked.
 
 0.	Create a normal checkbox but use type="checkboxfix" instead.
 
